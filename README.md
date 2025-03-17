@@ -5,7 +5,7 @@ This project implements a real-time voice assistant using the **LiveKit Voice Pi
 ## Project Structure
 
 - **`app.py`**: Flask server that handles text input, estimates audio length, and trims text if necessary.
-- **`before_tts.py`**: LiveKit agent script that sets up the voice pipeline and integrates the trimming callback.
+- **`main.py`**: LiveKit agent script that sets up the voice pipeline and integrates the trimming callback.
 - **`requirements.txt`**: List of Python dependencies required to run the project.
 - **`.env`**: Environment file for storing API keys and configuration (not included in the repository).
 - **`templates/index.html`**: Simple HTML template for testing the Flask server (optional, not provided here).
@@ -53,7 +53,7 @@ Follow these steps to set up and run the project locally:
    Copy the ngrok URL (e.g., `https://your-ngrok-url.ngrok-free.app/`).
 
 5. **Update the LiveKit Agent**:
-   In `before_tts.py`, replace the `server_url` in the `before_tts_cb` function with your ngrok URL:
+   In `main.py`, replace the `server_url` in the `before_tts_cb` function with your ngrok URL:
    ```python
    server_url = "https://your-ngrok-url.ngrok-free.app/"
    ```
@@ -61,7 +61,7 @@ Follow these steps to set up and run the project locally:
 6. **Run the LiveKit Agent**:
    Start the agent with the appropriate LiveKit credentials:
    ```bash
-   python before_tts.py dev --url your_livekit_url --api-key your_api_key --api-secret your_api_secret
+   python main.py dev --url your_livekit_url --api-key your_api_key --api-secret your_api_secret
    ```
 
 ## Code Explanations
